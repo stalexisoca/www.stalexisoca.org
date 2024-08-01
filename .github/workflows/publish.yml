@@ -5,7 +5,7 @@ on:
   workflow_dispatch: # allows running this workflow manually from the Actions tab
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
         with:
@@ -17,7 +17,7 @@ jobs:
           path: 'build'
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.3'
           bundler-cache: true
           working-directory: 'source'
       - name: build
