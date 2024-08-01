@@ -28,3 +28,17 @@
 
 - `find www/ -type f -exec chmod 0644 {} \;`
 - `find www/ -type d -exec chmod 0755 {} \;`
+
+bundle install;
+
+cd www;
+
+JEKYLL_ENV=development bundle exec jekyll serve --host 0.0.0.0;
+
+or
+
+JEKYLL_ENV=production bundle exec jekyll build;
+
+for example:
+
+cd /path-to/www.stalexisoca.org/www/ && git pull && bundle install && JEKYLL_ENV=production bundle exec jekyll build
