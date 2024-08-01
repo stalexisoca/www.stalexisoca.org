@@ -5,7 +5,7 @@
 - create a new public repository named `www.stalexisoca.org`
 - go to https://github.com/stalexisoca/www.stalexisoca.org/settings and configure the new repo
 - `mkdir www.stalexisoca.org`
-- `chmod 0700 www.stalexisoca.org`
+- `chmod 0755 www.stalexisoca.org`
 - `cd www.stalexisoca.org`
 - `git init`
 - `git branch -m main`
@@ -24,3 +24,7 @@
 - `git push -u origin main`
 - go to https://github.com/stalexisoca/www.stalexisoca.org/settings and set main as the default branch
 
+## dev notes
+
+- `find www/ -type f -exec chmod 0644 {} \;`
+- `find www/ -type d -exec chmod 0755 {} \;`
