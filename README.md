@@ -29,6 +29,8 @@
 - `find www/ -type f -exec chmod 0644 {} \;`
 - `find www/ -type d -exec chmod 0755 {} \;`
 
+`git remote set-url origin git@stalexisoca.github.com:stalexisoca/www.stalexisoca.org.git`
+
 bundle install;
 
 cd www;
