@@ -1,0 +1,226 @@
+/* design notes: */
+/* support small by default, and then respond to larger sizes */
+/* minimum supported viewport width 320px */
+/* small/phone viewport width <= 430px */
+/* medium/tablet viewport width <= 1000px */
+/* large/desktop viewport width > 1000px */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+html {
+  --black: rgba(0, 0, 0, 1);
+  --black-30: rgba(0, 0, 0, 0.30);
+  --white: rgba(255, 255, 255, 1);
+  --light-gray: rgba(239, 239, 239, 1);
+  --dark-gray: rgba(58, 58, 58, 1);
+  --st-alexis-red: rgba(165, 0, 33, 1);
+  --st-alexis-blue: rgba(46, 116, 181, 1);
+  background-color: var(--light-gray);
+}
+
+body {
+  margin: 0 auto;
+  border: 0;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  text-align: center;
+  word-break: break-word;
+  min-width: 320px;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "top-nav"
+    "main"
+    "oca"
+    "stalexis"
+    "footer";
+}
+
+body > div {
+  padding: 20px;
+  border-bottom: 1px solid var(--black);
+}
+
+img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.pdf::before { /*a[href$='.pdf']::before*/
+  content: "";
+  margin-right: 0.5em;
+  padding-right: 1em;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3csvg aria-hidden='true' focusable='false' data-prefix='far' data-icon='file-pdf' class='svg-inline--fa fa-file-pdf fa-w-12' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3e%3cpath fill='%23d90a0a' d='M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm250.2-143.7c-12.2-12-47-8.7-64.4-6.5-17.2-10.5-28.7-25-36.8-46.3 3.9-16.1 10.1-40.6 5.4-56-4.2-26.2-37.8-23.6-42.6-5.9-4.4 16.1-.4 38.5 7 67.1-10 23.9-24.9 56-35.4 74.4-20 10.3-47 26.2-51 46.2-3.3 15.8 26 55.2 76.1-31.2 22.4-7.4 46.8-16.5 68.4-20.1 18.9 10.2 41 17 55.8 17 25.5 0 28-28.2 17.5-38.7zm-198.1 77.8c5.1-13.7 24.5-29.5 30.4-35-19 30.3-30.4 35.7-30.4 35zm81.6-190.6c7.4 0 6.7 32.1 1.8 40.8-4.4-13.9-4.3-40.8-1.8-40.8zm-24.4 136.6c9.7-16.9 18-37 24.7-54.7 8.3 15.1 18.9 27.2 30.1 35.5-20.8 4.3-38.9 13.1-54.8 19.2zm131.6-5s-5 6-37.3-7.8c35.1-2.6 40.9 5.4 37.3 7.8z'%3e%3c/path%3e%3c/svg%3e");
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  width: fit-content;
+}
+
+ul > li {
+  padding: 5px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+ul > li:last-child {
+  border: none;
+}
+
+.header {
+  grid-area: header;
+}
+
+.header > a > img {
+  max-width: 200px;
+}
+
+.top-nav-toggle {
+  grid-area: top-nav-toggle;
+  margin: 0px auto;
+  padding: 0.15in;
+  /*border: 1px solid var(--black);
+  border-radius: 5px;*/
+  /*https://fonts.google.com/icons*/
+  background-color: var(--white);
+  cursor: pointer;
+  display: block;
+  width: 0.5in;
+}
+
+.top-nav-toggle > * {
+  display: none;
+}
+
+.top-nav-toggle > input[type=checkbox]:not(:checked) ~ img:first-of-type {
+  display: block;
+}
+
+.top-nav-toggle > input[type=checkbox]:checked  ~ img:last-of-type {
+  display: block;
+}
+
+.top-nav-toggle:has(> input[type=checkbox]:checked) + nav {
+  display: block;
+}
+
+.top-nav {
+  display: block; /* none: if used with top-nav-toggle */
+  grid-area: top-nav;
+  border-bottom: 1px solid var(--black);
+}
+
+.top-nav > menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.top-nav > menu > li {
+  padding: 0;
+  padding-right: 5px;
+  border-right: 1px solid var(--black);
+}
+
+.top-nav > menu > li:last-child {
+  padding-right: 0px;
+  border: none;
+}
+
+.main {
+  grid-area: main;
+}
+
+.oca {
+  grid-area: oca;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "oca-logo"
+    "oca-links";
+  gap: 5px;
+  text-align: center;
+}
+
+.oca > img {
+  grid-area: oca-logo;
+  max-width: 150px;
+}
+
+.oca > ul {
+  grid-area: oca-links;
+}
+
+.stalexis {
+  grid-area: stalexis;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "stalexis-links"
+    "stalexis-map";
+  gap: 5px;
+  text-align: center;
+}
+
+.stalexis > ul {
+  grid-area: stalexis-links;
+}
+
+.stalexis > iframe {
+  grid-area: stalexis-map;
+  width: 100%;
+}
+
+.footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "footer-links"
+    "footer-address"
+    "footer-copyright";
+  gap: 10px;
+  text-align: center;
+}
+
+.footer > ul {
+  grid-area: footer-links;
+}
+
+.footer > address {
+  grid-area: footer-address;
+}
+
+.footer > div.copyright {
+  grid-area: footer-copyright;
+}
+
+@media (width >= 500px) {
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids*/
+  .top-nav > menu {
+    flex-direction: row;
+  }
+}
+

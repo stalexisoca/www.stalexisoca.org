@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ page.description | escape }}">
+    <title>{{ page.title | escape }} | St Alexis of Wilkes-Barre Orthodox Church</title>
+    <link href="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/new.css" rel="stylesheet">
+    <link href="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/images/cross.svg" rel="icon" sizes="any" type="image/svg+xml">
+  </head>
+  <body>
+    <div class="header">
+      <a href="/"><img src="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/images/logo-combined.svg"></a>
+    </div>
+<!--<label class="top-nav-toggle">
+      <input type="checkbox">
+      <img src="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/images/menu-open.svg">
+      <img src="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/images/menu-close.svg">
+    </label>-->
+    <nav class="top-nav">
+      <menu>
+        <li><a href="/">Home</a></li>
+        <li><a href="/donate.html">Donate</a></li>
+        <li><a href="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/bulletin.pdf" target="_blank">Bulletin</a></li>
+        <li><a href="https://www.oca.org/" target="_blank">OCA Website</a></li>
+      </menu>
+    </nav>
+    <div class="main">{{ content }}</div>
+    <div class="oca">
+      <img src="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/images/oca.svg">
+      <ul>
+        <li><a title="About the OCA" href="https://oca.org/about" target="_blank" rel="noopener noreferrer">About the OCA</a></li>
+        <li><a title="The Orthodox Faith" href="https://oca.org/orthodoxy" target="_blank" rel="noopener noreferrer">The Orthodox Faith</a></li>
+        <li><a title="OCA Parish and Clergy Directories" href="https://oca.org/directories" target="_blank" rel="noopener noreferrer">OCA Parish and Clergy Directories</a></li>
+        <li><a title="The Work and Ministries of the Church" href="https://oca.org/work" target="_blank" rel="noopener noreferrer">The Work and Ministries of the Church</a></li>
+        <li><a title="Essential Orthodox Christian Beliefs" href="https://www.oca.org/cdn/PDFs/2023-0609-EOCB.pdf" target="_blank" class="pdf">Essential Orthodox Christian Beliefs</a></li>
+      </ul>
+    </div>
+    <div class="stalexis">
+      <div class="schedule">
+        <div>Schedule of Sunday Services</div>
+        <ul>
+          <li>Confession offered approximately 30 minutes before each service<br>(including Sunday mornings and by appointment with the priest)</li>
+          <li>9:10 AM: Hours (prayers in preparation for service)</li>
+          <li>9:30 AM: Divine Liturgy (the worship service)</li>
+          <li>After the service all are invited to join us for Coffee Hour and fellowship</li>
+          <li>Programs for children, youth and adults offered after most services</li>
+        </ul>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3472.8808920525903!2d-81.26772534626929!3d29.490672620372926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e6ed6e83d0e965%3A0xc14e61ba861f1e99!2s2323%20N%20State%20St%20Suite%20112%2C%20Bunnell%2C%20FL%2032110!5e0!3m2!1sen!2sus!4v1774026058557!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="footer">
+      <ul>
+        <li><a href="/static/{{ site.time | date: '%Y%m%d%H%M%S' }}/bulletin.pdf" target="_blank" class="pdf">Bulletin</a></li>
+        <li><a href="mailto:info@stalexisoca.org">Email: info@stalexisoca.org</a></li>
+        <li><a href="tel:+1-386-263-8383">Phone: 386-263-8383</a></li>
+      </ul>
+      <address>
+        2323 N STATE ST UNIT 112<br>
+        BUNNELL FL 32110-4398
+      </address>
+      <div class="copyright">Copyright &copy; {{ site.time | date: '%Y' }} St Alexis of Wilkes-Barre Orthodox Church, Inc., a 501(c)(3) tax exempt public charity. All rights reserved.</div>
+    </div>
+  </body>
+</html>
+
