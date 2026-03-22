@@ -1,7 +1,7 @@
 name: publish
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch: # allows running this workflow manually from the Actions tab
 jobs:
   publish:
