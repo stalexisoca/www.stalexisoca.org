@@ -5,6 +5,7 @@
 /* medium/tablet viewport width <= 1000px */
 /* large/desktop viewport width > 1000px */
 
+/* Crimson Text is an open font that is similar to the desired "Book Antiqua" font */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 
 html {
