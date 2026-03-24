@@ -1,5 +1,6 @@
 /* design notes: */
 /* support small by default, and then respond to larger sizes */
+/* reference: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids */
 /* minimum supported viewport width 320px */
 /* small/phone viewport width <= 430px */
 /* medium/tablet viewport width <= 1000px */
@@ -36,7 +37,6 @@ body {
   grid-template-areas:
     "header"
     "top-nav"
-    "announcement"
     "main"
     "oca"
     "stalexis"
@@ -55,7 +55,8 @@ img {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: inherit;
 }
 
 a.pdf::before { /*a[href$='.pdf']::before*/
@@ -123,10 +124,14 @@ ul > li:last-child {
 }
 
 .announcement {
-  grid-area: announcement;
   background-color: var(--st-alexis-red);
   color: var(--white);
   font-size: 1.20em;
+  padding: 5px;
+}
+
+.announcement > h1 {
+  margin: 0;
 }
 
 .main {
@@ -198,9 +203,5 @@ ul > li:last-child {
 }
 
 @media (width >= 500px) {
-  /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids*/
-  .top-nav > menu {
-    flex-direction: row;
-  }
 }
 
