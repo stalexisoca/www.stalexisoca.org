@@ -92,37 +92,8 @@ ul > li:last-child {
   max-width: 200px;
 }
 
-.top-nav-toggle {
-  grid-area: top-nav-toggle;
-  margin: 0px auto;
-  padding: 0.15in;
-  /*border: 1px solid var(--black);
-  border-radius: 5px;*/
-  /*https://fonts.google.com/icons*/
-  background-color: var(--white);
-  cursor: pointer;
-  display: block;
-  width: 0.5in;
-}
-
-.top-nav-toggle > * {
-  display: none;
-}
-
-.top-nav-toggle > input[type=checkbox]:not(:checked) ~ img:first-of-type {
-  display: block;
-}
-
-.top-nav-toggle > input[type=checkbox]:checked  ~ img:last-of-type {
-  display: block;
-}
-
-.top-nav-toggle:has(> input[type=checkbox]:checked) + nav {
-  display: block;
-}
-
 .top-nav {
-  display: block; /* none: if used with top-nav-toggle */
+  display: block;
   grid-area: top-nav;
   border-bottom: 1px solid var(--black);
 }
