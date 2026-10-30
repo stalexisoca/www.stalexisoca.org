@@ -5,13 +5,13 @@ on:
   workflow_dispatch: # allows running this workflow manually from the Actions tab
 jobs:
   publish:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           path: 'source'
           submodules: 'recursive'
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           ref: 'gh-pages'
           path: 'build'
